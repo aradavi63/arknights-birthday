@@ -1,18 +1,18 @@
+@import url(https://fonts.googleapis.com/css2?family=Oswald&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Montserrat&display=swap);
 @import "tailwindcss";
 
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@theme {
+  --color-background: #ececec;
+  --color-primary: #353333;
+  --color-secondary: #57ad39;
+  --color-accent: #da6030;
+  --color-textWhite: #dfe2df;
+  --color-textBlack: #464646;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --font-oswald: "Oswald", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
