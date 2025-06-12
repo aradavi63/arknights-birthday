@@ -5,7 +5,7 @@
 @theme {
   --color-background: #ececec;
   --color-primary: #353333;
-  --color-secondary: #57ad39;
+  --color-secondary: #4098d6;
   --color-accent: #da6030;
   --color-textWhite: #dfe2df;
   --color-textBlack: #464646;
@@ -27,8 +27,8 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  flex-direction: column;
+  min-width: 100vw;
   min-height: 100vh;
 }
 
