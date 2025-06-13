@@ -1,6 +1,6 @@
 import '../index.css'
 
-export default function opList() {
+export default function Sidebar() {
     return (
         <div className="sidebar bg-primary">
             <h1 className="text-textWhite">Placeholder</h1>

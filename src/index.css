@@ -14,3 +14,13 @@
   --font-montserrat: "Montserrat", sans-serif;
 
 }
+
+.sidebar {
+  width: 300px;
+  line-height: 1.5;
+}
+
+.fc-dayGrindYear-button, .fc-dayGrindMonth-button .fc-dayGrindWeek-button, .fc-dayGrindDay-button {
+  background-color: var(--color-accent);
+  color: var(--color-textWhite);
+}

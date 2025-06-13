@@ -8,11 +8,11 @@ export default function App() {
   return (
     <>
     <Header />
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-2 gap-2">
       <div>
         <Sidebar />
       </div>
-      <div col-span-2>
+      <div col-span-full>
         <Calendar />
       </div>
     </div>
