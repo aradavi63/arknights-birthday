@@ -7,7 +7,7 @@ export default function Header() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex h-24">
                     <div className="flex items-center justify-start">
-                        <h1 className="text-xl text-textWhite font-oswald font-semibold">
+                        <h1 className="text-5xl text-textWhite font-oswald font-semibold">
                             Rhodes Island Birthdays
                         </h1>
                     </div>

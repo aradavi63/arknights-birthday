@@ -1,16 +1,20 @@
 //import { useState } from 'react'
 import Calendar from './components/calendar'
 import Header from './components/header'
-import OpList from './components/opList'
+import Sidebar from './components/sidebar'
 import './index.css'
 
 export default function App() {
   return (
     <>
     <Header />
-    <div className="columns-2 gap-2">
-      <Calendar />
-      <OpList />
+    <div className="grid grid-cols-3 gap-4">
+      <div>
+        <Sidebar />
+      </div>
+      <div col-span-2>
+        <Calendar />
+      </div>
     </div>
     
     </>
