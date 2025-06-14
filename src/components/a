@@ -1,11 +1,3 @@
-//import { useRef } from 'react';
-
-import FullCalendar from '@fullcalendar/react'
-import dayGrid from '@fullcalendar/daygrid'
-import multiMonth from '@fullcalendar/multimonth'
-//import interactionPlugin from "@fullcalendar/interaction"
-import '../index.css'
-
 export default function Calendar() {
     return (
       <FullCalendar
@@ -16,6 +8,7 @@ export default function Calendar() {
           center: 'title',
           right: 'multiMonthYear,dayGridMonth,dayGridWeek,dayGridDay'
         }}
+        themeSystem= {['standard']}
       />
     )
 }

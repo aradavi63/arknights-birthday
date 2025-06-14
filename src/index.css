@@ -19,8 +19,29 @@
   width: 300px;
   line-height: 1.5;
 }
+/* TO DO: fix button styling */
+.fc-button {
+  background-color: var(--color-background) !important;
+  color: var(--color-textBlack) !important;
+  font-family: var(--font-montserrat) !important;
+  border-bottom-left-radius: 1px !important;
+  border-bottom-right-radius: 1px !important;
+  border-width: 0 2px 3px 0 !important; 
+  padding: 8px 16px !important;
+  transition: all 0.2s ease !important;
+  border-color: var(--color-primary) !important;
+}
 
-.fc-dayGrindYear-button, .fc-dayGrindMonth-button .fc-dayGrindWeek-button, .fc-dayGrindDay-button {
-  background-color: var(--color-accent);
-  color: var(--color-textWhite);
+.fc-button-active, .fc-button:hover:not(:disabled) {
+  background-color: var(--color-primary) !important;
+  color: var(--color-textWhite) !important;
+  border-bottom-color: var(--color-secondary) !important;
+}
+
+.fc-prev-button, .fc-next-button, .fc-today-button {
+  border-bottom: none !important;
+}
+
+.fc-button:last-child {
+  border-right: none !important;
 }
