@@ -1,10 +1,12 @@
+/* You have to use !important to override styles from FullCalendar */
+
 .fc-button {
   background-color: var(--color-background) !important;
   color: var(--color-textBlack) !important;
   font-family: var(--font-montserrat) !important;
   border-bottom-left-radius: 1px !important;
   border-bottom-right-radius: 1px !important;
-  border-width: 0 2px 3px 0 !important; 
+  border-width: 0 2px 4px 0 !important; 
   padding: 8px 16px !important;
   transition: all 0.2s ease !important;
   border-color: var(--color-primary) !important;
@@ -35,4 +37,8 @@
 .fc-theme-standard th {
   color: var(--color-textBlack) !important;
   font-family: var(--font-montserrat) !important;
+}
+
+.fc-day-today {
+    background-color: color-mix(in srgb, var(--color-secondary) 10%, transparent) !important;
 }
