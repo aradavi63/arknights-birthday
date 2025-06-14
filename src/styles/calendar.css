@@ -1,25 +1,3 @@
-@import url(https://fonts.googleapis.com/css2?family=Oswald&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Montserrat&display=swap);
-@import "tailwindcss";
-
-@theme {
-  --color-background: #ececec;
-  --color-primary: #353333;
-  --color-secondary: #4098d6;
-  --color-accent: #da6030;
-  --color-textWhite: #dfe2df;
-  --color-textBlack: #464646;
-
-  --font-oswald: "Oswald", sans-serif;
-  --font-montserrat: "Montserrat", sans-serif;
-
-}
-
-.sidebar {
-  width: 300px;
-  line-height: 1.5;
-}
-/* TO DO: fix button styling */
 .fc-button {
   background-color: var(--color-background) !important;
   color: var(--color-textBlack) !important;
@@ -44,4 +22,17 @@
 
 .fc-button:last-child {
   border-right: none !important;
+}
+
+.fc-toolbar-title {
+  color: var(--color-textBlack) !important;
+  font-family: var(--font-montserrat) !important;
+  font-size: xx-large !important;
+}
+
+.fc-theme-standard,
+.fc-theme-standard td,
+.fc-theme-standard th {
+  color: var(--color-textBlack) !important;
+  font-family: var(--font-montserrat) !important;
 }

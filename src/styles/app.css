@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css2?family=Oswald&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Montserrat&display=swap);
+@import "tailwindcss";
+
+@theme {
+  --color-background: #ececec;
+  --color-primary: #353333;
+  --color-secondary: #4098d6;
+  --color-accent: #da6030;
+  --color-textWhite: #dfe2df;
+  --color-textBlack: #464646;
+
+  --font-oswald: "Oswald", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+
+}
+
+.sidebar {
+  width: 300px;
+  line-height: 1.5;
+}

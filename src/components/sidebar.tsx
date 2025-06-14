@@ -1,4 +1,4 @@
-import '../index.css'
+import '../styles/app.css'
 
 export default function Sidebar() {
     return (

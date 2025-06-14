@@ -4,17 +4,25 @@ import FullCalendar from '@fullcalendar/react'
 import dayGrid from '@fullcalendar/daygrid'
 import multiMonth from '@fullcalendar/multimonth'
 //import interactionPlugin from "@fullcalendar/interaction"
-import '../index.css'
+import '../styles/app.css'
+import '../styles/calendar.css'
 
 export default function Calendar() {
     return (
       <FullCalendar
-        plugins={[ dayGrid, multiMonth ]}
+        plugins ={[ dayGrid, multiMonth ]}
         initialView="dayGridMonth"
-        headerToolbar= {{
+        headerToolbar={{
           left: 'prev,next today',
           center: 'title',
           right: 'multiMonthYear,dayGridMonth,dayGridWeek,dayGridDay'
+        }}
+        buttonText= {{
+          today: 'Today',
+          multiMonthYear: 'Year',
+          month: 'Month',
+          week: 'Week',
+          day: 'Day'
         }}
       />
     )

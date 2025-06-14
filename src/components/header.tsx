@@ -1,4 +1,4 @@
-import '../index.css'
+import '../styles/app.css'
 import riLogo from '/ri-logo.png'
 
 export default function Header() {
