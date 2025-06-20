@@ -32,8 +32,10 @@ type OperatorData = {
   id: string;
   name: string;
   dob: string;
-  // image: string; 
+  image: string; 
 };
+
+const imageUrl = 'https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/';
 
 function extractInfoFromStoryText(storyText: string): { name?: string; dob?: string } {
   const lines = storyText.split('\n');
@@ -44,12 +46,22 @@ function extractInfoFromStoryText(storyText: string): { name?: string; dob?: str
     if (line.startsWith('[Code Name]')) {
       name = line.replace('[Code Name]', '').trim();
     }
+    else if (line.startsWith('[Model]')) {
+      name = line.replace('[Model]', '').trim();
+    }
     if (line.startsWith('[Date of Birth]')) {
       dob = line.replace('[Date of Birth]', '').trim();
+    }
+    else if (line.startsWith('[Date of Release]')) {
+      dob = line.replace('[Date of Release]', '').trim();
     }
   }
 
   return { name, dob };
+}
+
+function getOperatorImageUrl(operatorId: string): string {
+  return imageUrl + operatorId + '.png';
 }
 
 async function fetchOperatorJson(): Promise<OperatorData[]> {
@@ -62,9 +74,7 @@ async function fetchOperatorJson(): Promise<OperatorData[]> {
 
     const data: HandbookData = await response.json();
 
-    // Transform the data into our desired format
     const operators: OperatorData[] = Object.entries(data.handbookDict).map(([id, operatorInfo]) => {
-      // Find the "Basic Info" story which contains the code name and date of birth
       const basicInfoStory = operatorInfo.storyTextAudio.find(
         (story) => story.storyTitle === 'Basic Info'
       );
@@ -78,10 +88,13 @@ async function fetchOperatorJson(): Promise<OperatorData[]> {
         dob = extracted.dob || 'Unknown';
       }
 
+      const image = getOperatorImageUrl(operatorInfo.charID);
+
       return {
         id,
         name,
         dob,
+        image,
       };
     });
 
@@ -92,13 +105,10 @@ async function fetchOperatorJson(): Promise<OperatorData[]> {
   }
 }
 
-// Example usage
 async function main() {
   const operators = await fetchOperatorJson();
-  const operatorInfo = JSON.stringify(operators, null, 2);
-  fs.writeFileSync('src/operators.json', operatorInfo, "utf8");
+  const operatorData = JSON.stringify(operators, null, 2);
+  fs.writeFileSync('src/operators.json', operatorData, "utf8");
 }
-
-export default main();
 
 main();
