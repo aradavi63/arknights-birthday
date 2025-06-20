@@ -46,6 +46,9 @@ function extractInfoFromStoryText(storyText: string): { name?: string; dob?: str
     if (line.startsWith('[Code Name]')) {
       name = line.replace('[Code Name]', '').trim();
     }
+    else if (line.startsWith('[Codename]')) {
+      name = line.replace('[Codename]', '').trim();
+    }
     else if (line.startsWith('[Model]')) {
       name = line.replace('[Model]', '').trim();
     }
@@ -54,6 +57,9 @@ function extractInfoFromStoryText(storyText: string): { name?: string; dob?: str
     }
     else if (line.startsWith('[Date of Release]')) {
       dob = line.replace('[Date of Release]', '').trim();
+    }
+    if (name != undefined && dob != undefined) { // Break because Ifrit's file is read twice
+      break
     }
   }
 
