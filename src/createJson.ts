@@ -74,7 +74,7 @@ async function fetchOperatorJson(): Promise<OperatorData[]> {
 
     const data: HandbookData = await response.json();
 
-    const operators: OperatorData[] = Object.entries(data.handbookDict).map(([id, operatorInfo]) => {
+    const operators: OperatorData[] = Object.entries(data.handbookDict).filter(([id]) => id.startsWith('char')).map(([id, operatorInfo]) => {
       const basicInfoStory = operatorInfo.storyTextAudio.find(
         (story) => story.storyTitle === 'Basic Info'
       );
