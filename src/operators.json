@@ -1080,12 +1080,6 @@
     "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_2015_dusk.png"
   },
   {
-    "id": "char_1011_lava2",
-    "name": "Lava the Purgatory",
-    "dob": "June 22",
-    "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_1011_lava2.png"
-  },
-  {
     "id": "char_456_ash",
     "name": "Ash",
     "dob": "Dec 24",
@@ -1126,12 +1120,6 @@
     "name": "Heavyrain",
     "dob": "Mar 3",
     "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_304_zebra.png"
-  },
-  {
-    "id": "char_1012_skadi2",
-    "name": "Skadi",
-    "dob": "Mar 7",
-    "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_1012_skadi2.png"
   },
   {
     "id": "char_003_kalts",
@@ -1194,12 +1182,6 @@
     "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_437_mizuki.png"
   },
   {
-    "id": "char_1013_chen2",
-    "name": "Ch'en",
-    "dob": "Jul 7",
-    "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_1013_chen2.png"
-  },
-  {
     "id": "char_486_takila",
     "name": "Tequila",
     "dob": "May 15",
@@ -1234,12 +1216,6 @@
     "name": "Ashlock",
     "dob": "Mar 20",
     "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_431_ashlok.png"
-  },
-  {
-    "id": "char_1014_nearl2",
-    "name": "Nearl",
-    "dob": "Apr 23",
-    "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_1014_nearl2.png"
   },
   {
     "id": "char_420_flamtl",
@@ -1338,12 +1314,6 @@
     "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_322_lmlee.png"
   },
   {
-    "id": "char_1021_kroos2",
-    "name": "Kroos",
-    "dob": "Nov 22",
-    "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_1021_kroos2.png"
-  },
-  {
     "id": "char_300_phenxi",
     "name": "Fiammetta",
     "dob": "Apr 3",
@@ -1386,12 +1356,6 @@
     "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_4045_heidi.png"
   },
   {
-    "id": "char_1023_ghost2",
-    "name": "Specter",
-    "dob": "July 27",
-    "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_1023_ghost2.png"
-  },
-  {
     "id": "char_4009_irene",
     "name": "Irene",
     "dob": "Jan 3",
@@ -1422,12 +1386,6 @@
     "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_4046_ebnhlz.png"
   },
   {
-    "id": "char_1024_hbisc2",
-    "name": "Hibiscus",
-    "dob": "Jun 21",
-    "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_1024_hbisc2.png"
-  },
-  {
     "id": "char_4047_pianst",
     "name": "Czerny",
     "dob": "Sep 10",
@@ -1440,22 +1398,10 @@
     "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_4048_doroth.png"
   },
   {
-    "id": "char_1027_greyy2",
-    "name": "Greyy",
-    "dob": "Jun 6",
-    "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_1027_greyy2.png"
-  },
-  {
     "id": "char_135_halo",
     "name": "Astgenne",
     "dob": "Jul 10",
     "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_135_halo.png"
-  },
-  {
-    "id": "char_1026_gvial2",
-    "name": "Gavial",
-    "dob": "May 1",
-    "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_1026_gvial2.png"
   },
   {
     "id": "char_4055_bgsnow",
@@ -1584,12 +1530,6 @@
     "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_4065_judge.png"
   },
   {
-    "id": "char_1028_texas2",
-    "name": "Texas",
-    "dob": "Jun 1",
-    "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_1028_texas2.png"
-  },
-  {
     "id": "char_4017_puzzle",
     "name": "Puzzle",
     "dob": "Dec 5",
@@ -1600,12 +1540,6 @@
     "name": "Harmonie",
     "dob": "May 13",
     "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_297_hamoni.png"
-  },
-  {
-    "id": "char_1020_reed2",
-    "name": "Reed",
-    "dob": "Oct 16",
-    "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_1020_reed2.png"
   },
   {
     "id": "char_4080_lin",
@@ -1644,22 +1578,10 @@
     "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_4078_bdhkgt.png"
   },
   {
-    "id": "char_1029_yato2",
-    "name": "Yato",
-    "dob": "May 14",
-    "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_1029_yato2.png"
-  },
-  {
     "id": "char_4077_palico",
     "name": "Terra Research Commission",
     "dob": "Unknown",
     "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_4077_palico.png"
-  },
-  {
-    "id": "char_1030_noirc2",
-    "name": "Noir Corne",
-    "dob": "Aug. 30",
-    "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_1030_noirc2.png"
   },
   {
     "id": "char_4091_ulika",
@@ -1692,12 +1614,6 @@
     "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_4087_ines.png"
   },
   {
-    "id": "char_1031_slent2",
-    "name": "Silence",
-    "dob": "May 18",
-    "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_1031_slent2.png"
-  },
-  {
     "id": "char_4006_melnte",
     "name": "Melanite",
     "dob": "Mar 15",
@@ -1728,12 +1644,6 @@
     "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_4015_spuria.png"
   },
   {
-    "id": "char_1032_excu2",
-    "name": "Executor",
-    "dob": "July 7",
-    "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_1032_excu2.png"
-  },
-  {
     "id": "char_498_inside",
     "name": "Insider",
     "dob": "Nov 14",
@@ -1758,18 +1668,6 @@
     "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_4102_threye.png"
   },
   {
-    "id": "char_1016_agoat2",
-    "name": "Eyjafjalla",
-    "dob": "Oct 18",
-    "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_1016_agoat2.png"
-  },
-  {
-    "id": "char_1033_swire2",
-    "name": "Swire",
-    "dob": "Jul 1",
-    "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_1033_swire2.png"
-  },
-  {
     "id": "char_488_buildr",
     "name": "Poncirus",
     "dob": "Nov 21",
@@ -1780,12 +1678,6 @@
     "name": "Bryophyta",
     "dob": "Sept 29",
     "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_4106_bryota.png"
-  },
-  {
-    "id": "char_1034_jesca2",
-    "name": "Jessica",
-    "dob": "Mar 3",
-    "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_1034_jesca2.png"
   },
   {
     "id": "char_4105_almond",
@@ -1980,12 +1872,6 @@
     "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_4133_logos.png"
   },
   {
-    "id": "char_1036_fang2",
-    "name": "Fang",
-    "dob": "Dec 2",
-    "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_1036_fang2.png"
-  },
-  {
     "id": "char_4136_phonor",
     "name": "PhonoR-0",
     "dob": "Sep 2",
@@ -2112,12 +1998,6 @@
     "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_4165_ctrail.png"
   },
   {
-    "id": "char_1038_whitw2",
-    "name": "Lappland",
-    "dob": "Nov 11",
-    "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_1038_whitw2.png"
-  },
-  {
     "id": "char_4026_vulpis",
     "name": "Vulpisfoglia",
     "dob": "Sep 8",
@@ -2140,12 +2020,6 @@
     "name": "Tecno",
     "dob": "Aug 30",
     "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_4164_tecno.png"
-  },
-  {
-    "id": "char_1039_thorn2",
-    "name": "Thorns",
-    "dob": "Mar 17",
-    "image": "https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/char_1039_thorn2.png"
   },
   {
     "id": "char_4163_rosesa",

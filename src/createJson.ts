@@ -83,7 +83,11 @@ async function fetchOperatorJson(): Promise<OperatorData[]> {
 
     const data: HandbookData = await response.json();
 
-    const operators: OperatorData[] = Object.entries(data.handbookDict).filter(([id]) => id.startsWith('char')).map(([id, operatorInfo]) => {
+    const operatorEntries = Object.entries(data.handbookDict).filter(([id]) => id.startsWith('char'));
+    const seenNames = new Set<string>();
+    const operators: OperatorData[] = [];
+
+    for (const [id, operatorInfo] of operatorEntries) {
       const basicInfoStory = operatorInfo.storyTextAudio.find(
         (story) => story.storyTitle === 'Basic Info'
       );
@@ -97,15 +101,23 @@ async function fetchOperatorJson(): Promise<OperatorData[]> {
         dob = extracted.dob || 'Unknown';
       }
 
+      if (seenNames.has(name)) {
+        continue;
+      }
+      else if (name === 'Lava the Purgatory' && seenNames.has('Lava')) { // The only alter who has the full title inside handbook
+        continue;
+      }
+      seenNames.add(name);
+
       const image = getOperatorImageUrl(operatorInfo.charID);
 
-      return {
+      operators.push({
         id,
         name,
         dob,
         image,
-      };
-    });
+      });
+    }
 
     return operators;
   } catch (error) {
