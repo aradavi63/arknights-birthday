@@ -9,8 +9,17 @@ import rrulePlugin from '@fullcalendar/rrule'
 import '../styles/app.css'
 import '../styles/calendar.css'
 import operatorData from '../operators.json'
+import type { EventContentArg } from '@fullcalendar/core';
 
 const unknownDob: string[] = [];
+
+type eventInfo = {
+  id: string, 
+  title: string; 
+  rrule: {freq: 'yearly', dtstart: string}, 
+  allDay: boolean, 
+  extendedProps : {image: string}
+}
 
 function convertDateToTime(date: string): {freq: 'yearly', dtstart: string}  {
   let month = '';
@@ -44,7 +53,7 @@ function convertDateToTime(date: string): {freq: 'yearly', dtstart: string}  {
 }
 
 function addBirthdays() {
-  const events: { id: string, title: string; rrule: {freq: 'yearly', dtstart: string}, allDay: boolean }[] = [];
+  const events: eventInfo[] = [];
   for (const operator of Object.values(operatorData)) {
     if (isNaN(Number(operator.dob[operator.dob.length - 1]))) { // If last element of DOB not a number, should be unknown
       unknownDob.push(operator.id)
@@ -56,12 +65,37 @@ function addBirthdays() {
           id : operator.name,
           title : operator.name,
           rrule : birthday,
-          allDay : true
+          allDay : true,
+          extendedProps : {image: operator.image}
         }
       )
     }
   }
   return events;
+}
+
+function renderAvatar(arg: EventContentArg) {
+  const imageUrl = arg.event.extendedProps.image;
+  return (
+    <div style={{ 
+      display: 'flex', 
+      alignItems: 'center', 
+      justifyContent: 'center',
+      height: '100%',
+      width: '100%'
+    }}>
+      <img 
+        src={imageUrl} 
+        alt={arg.event.title}
+        title={arg.event.title}
+        style={{
+          width: '48px',
+          height: '48px',
+          cursor: 'pointer'
+        }}
+      />
+    </div>
+  );
 }
 
 export default function Calendar() {
@@ -88,6 +122,9 @@ export default function Calendar() {
       showNonCurrentDates={false}
       height={750}
       events={bdayEvents}
+      eventBackgroundColor={'transparent'}
+      eventBorderColor={'transparent'}
+      eventContent={renderAvatar}
     />
     </div>
   )

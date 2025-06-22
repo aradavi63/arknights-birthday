@@ -35,7 +35,7 @@ type OperatorData = {
   image: string; 
 };
 
-const imageUrl = 'https://github.com/PuppiizSunniiz/Arknight-Images/tree/main/avatars/';
+const imageUrl = 'https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/';
 
 function extractInfoFromStoryText(storyText: string): { name?: string; dob?: string } {
   const lines = storyText.split('\n');
