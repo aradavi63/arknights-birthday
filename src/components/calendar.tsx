@@ -84,7 +84,9 @@ export default function Calendar() {
         day: 'Day'
       }}
       validRange={{start:'1970-01-01'}}
-      height={600}
+      fixedWeekCount={false}
+      showNonCurrentDates={false}
+      height={750}
       events={bdayEvents}
     />
     </div>
