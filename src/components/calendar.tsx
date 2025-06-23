@@ -1,17 +1,14 @@
-import { useMemo } from 'react';
+import { useMemo, useEffect } from 'react';
 
+import type { EventContentArg } from '@fullcalendar/core';
 import FullCalendar from '@fullcalendar/react'
 import dayGrid from '@fullcalendar/daygrid'
 import multiMonth from '@fullcalendar/multimonth'
 import rrulePlugin from '@fullcalendar/rrule'
-//import interactionPlugin from "@fullcalendar/interaction"
 
 import '../styles/app.css'
 import '../styles/calendar.css'
 import operatorData from '../operators.json'
-import type { EventContentArg } from '@fullcalendar/core';
-
-const unknownDob: string[] = [];
 
 type eventInfo = {
   id: string, 
@@ -54,11 +51,11 @@ function convertDateToTime(date: string): {freq: 'yearly', dtstart: string}  {
 
 function addBirthdays() {
   const events: eventInfo[] = [];
+  const unknownDob: { name: string; image: string }[] = [];
   for (const operator of Object.values(operatorData)) {
-    if (isNaN(Number(operator.dob[operator.dob.length - 1]))) { // If last element of DOB not a number, should be unknown
-      unknownDob.push(operator.id)
-    }
-    else {
+    if (isNaN(Number(operator.dob[operator.dob.length - 1]))) {
+      unknownDob.push({ name: operator.name, image: operator.image });
+    } else {
       const birthday = convertDateToTime(operator.dob)
       events.push(
         {
@@ -71,7 +68,7 @@ function addBirthdays() {
       )
     }
   }
-  return events;
+  return { events, unknownDob };
 }
 
 function renderAvatar(arg: EventContentArg) {
@@ -98,10 +95,13 @@ function renderAvatar(arg: EventContentArg) {
   );
 }
 
-export default function Calendar() {
-  const bdayEvents = useMemo(() => addBirthdays(), []);
+export default function Calendar({ setUnknownDob }: { setUnknownDob: React.Dispatch<React.SetStateAction<{ name: string; image: string }[]>> }) {
+  const { events: bdayEvents, unknownDob } = useMemo(() => addBirthdays(), []);
+  useEffect(() => {
+    setUnknownDob(unknownDob);
+  }, [unknownDob, setUnknownDob]);
   return (
-    <div className='max-w-7xl mx-auto'>
+    <div className='max-w-7xl mx-auto mt-8'>
       <FullCalendar
       plugins={[ dayGrid, multiMonth, rrulePlugin ]}
       initialView="dayGridMonth"
