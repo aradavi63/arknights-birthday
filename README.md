@@ -12,6 +12,6 @@ npx tsx src/createJson.ts
 ## Credits
 
 Operator informations was extracted from [Kengxxiao's ArknightsGameData repository] (https://github.com/Kengxxiao/ArknightsGameData_YoStar)
-Operator images was extracted from [PuppiizSunniiz's Arknights Images repository] (https://github.com/PuppiizSunniiz/Arknight-Images), forked from [Aceship] (https://github.com/Aceship/AN-EN-Tags) 
+Operator images was extracted from [PuppiizSunniiz's Arknights Images repository] (https://github.com/PuppiizSunniiz/Arknight-Images)
 
 All property belongs to Hypergrpyph, Studio Montagne and Yostar

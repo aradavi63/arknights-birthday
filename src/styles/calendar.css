@@ -42,3 +42,14 @@
 .fc-day-today {
     background-color: color-mix(in srgb, var(--color-secondary) 10%, transparent) !important;
 }
+
+.fc-event {
+  display: inline-block !important; 
+  vertical-align: top;
+}
+
+.fc-daygrid-event-harness {
+  display: inline-block !important;
+  width: auto !important;
+  margin: 2px !important;
+}
