@@ -19,29 +19,7 @@ type eventInfo = {
 }
 
 function convertDateToTime(date: string): {freq: 'yearly', dtstart: string}  {
-  let month = '';
-  if (date.startsWith('Jan')) month = '01-';
-  else if (date.startsWith('Feb')) month = '02-';
-  else if (date.startsWith('Mar')) month = '03-';
-  else if (date.startsWith('Apr')) month = '04-';
-  else if (date.startsWith('May')) month = '05-';
-  else if (date.startsWith('Jun')) month = '06-';
-  else if (date.startsWith('Jul')) month = '07-';
-  else if (date.startsWith('Aug')) month = '08-';
-  else if (date.startsWith('Sep')) month = '09-';
-  else if (date.startsWith('Oct')) month = '10-';
-  else if (date.startsWith('Nov')) month = '11-';
-  else if (date.startsWith('Dec')) month = '12-';
-
-  const dayNum = date.slice(-2);
-  let day = '';
-  if (dayNum[0] === ' ') {
-    day = '0' + dayNum[1];
-  }
-  else {
-    day = dayNum;
-  }
-  const dtstart = '1970-' + month + day;
+  const dtstart = '1970-' + date;
 
   return {
     freq: 'yearly',
@@ -95,7 +73,13 @@ function renderAvatar(arg: EventContentArg) {
   );
 }
 
-export default function Calendar({ setUnknownDob }: { setUnknownDob: React.Dispatch<React.SetStateAction<{ name: string; image: string }[]>> }) {
+export default function Calendar({
+  setUnknownDob,
+  calendarRef
+}: {
+  setUnknownDob: React.Dispatch<React.SetStateAction<{ name: string; image: string }[]>>,
+  calendarRef: React.RefObject<FullCalendar | null>
+}) {
   const { events: bdayEvents, unknownDob } = useMemo(() => addBirthdays(), []);
   useEffect(() => {
     setUnknownDob(unknownDob);
@@ -103,29 +87,30 @@ export default function Calendar({ setUnknownDob }: { setUnknownDob: React.Dispa
   return (
     <div className='max-w-7xl mx-auto mt-8'>
       <FullCalendar
-      plugins={[ dayGrid, multiMonth, rrulePlugin ]}
-      initialView="dayGridMonth"
-      headerToolbar={{
-        left: 'prev,next today',
-        center: 'title',
-        right: 'multiMonthYear,dayGridMonth,dayGridWeek,dayGridDay'
-      }}
-      buttonText={{
-        today: 'Today',
-        multiMonthYear: 'Year',
-        month: 'Month',
-        week: 'Week',
-        day: 'Day'
-      }}
-      validRange={{start:'1970-01-01'}}
-      fixedWeekCount={false}
-      showNonCurrentDates={false}
-      height={750}
-      events={bdayEvents}
-      eventBackgroundColor={'transparent'}
-      eventBorderColor={'transparent'}
-      eventContent={renderAvatar}
-    />
+        ref={calendarRef} 
+        plugins={[ dayGrid, multiMonth, rrulePlugin ]}
+        initialView="dayGridMonth"
+        headerToolbar={{
+          left: 'prev,next today',
+          center: 'title',
+          right: 'multiMonthYear,dayGridMonth,dayGridWeek,dayGridDay'
+        }}
+        buttonText={{
+          today: 'Today',
+          multiMonthYear: 'Year',
+          month: 'Month',
+          week: 'Week',
+          day: 'Day'
+        }}
+        validRange={{start:'1970-01-01'}}
+        fixedWeekCount={false}
+        showNonCurrentDates={false}
+        height={750}
+        events={bdayEvents}
+        eventBackgroundColor={'transparent'}
+        eventBorderColor={'transparent'}
+        eventContent={renderAvatar}
+      />
     </div>
   )
 }

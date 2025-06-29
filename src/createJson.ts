@@ -37,6 +37,33 @@ type OperatorData = {
 
 const imageUrl = 'https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/';
 
+function transformDate(date: string): string {
+  let month = '';
+  if (date.startsWith('Jan')) month = '01-';
+  else if (date.startsWith('Feb')) month = '02-';
+  else if (date.startsWith('Mar')) month = '03-';
+  else if (date.startsWith('Apr')) month = '04-';
+  else if (date.startsWith('May')) month = '05-';
+  else if (date.startsWith('Jun')) month = '06-';
+  else if (date.startsWith('Jul')) month = '07-';
+  else if (date.startsWith('Aug')) month = '08-';
+  else if (date.startsWith('Sep')) month = '09-';
+  else if (date.startsWith('Oct')) month = '10-';
+  else if (date.startsWith('Nov')) month = '11-';
+  else if (date.startsWith('Dec')) month = '12-';
+
+  const dayNum = date.slice(-2);
+  let day = '';
+  if (dayNum[0] === ' ') {
+    day = '0' + dayNum[1];
+  }
+  else {
+    day = dayNum;
+  }
+  const dob = month + day;
+  return dob
+}
+
 function extractInfoFromStoryText(storyText: string): { name?: string; dob?: string } {
   const lines = storyText.split('\n');
   let name: string | undefined;
@@ -65,7 +92,9 @@ function extractInfoFromStoryText(storyText: string): { name?: string; dob?: str
   if (dob && dob.endsWith('th')) { // Flint's birthday is the only one with ordinals, need to clean
     dob = dob.slice(0,-2); 
   }
-
+  if (dob) {
+    dob = transformDate(dob);
+  }
   return { name, dob };
 }
 

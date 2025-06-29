@@ -1,5 +1,4 @@
 import '../styles/app.css'
-//import operatorData from '../operators.json'
 
 export default function UnknownBdayBox({ unknownDob }: { unknownDob: { name: string; image: string }[] }) {
     return (
