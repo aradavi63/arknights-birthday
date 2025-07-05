@@ -12,6 +12,7 @@
   "dependencies": {
     "@fullcalendar/core": "^6.1.17",
     "@fullcalendar/daygrid": "^6.1.17",
+    "@fullcalendar/interaction": "^6.1.18",
     "@fullcalendar/multimonth": "^6.1.17",
     "@fullcalendar/react": "^6.1.17",
     "@fullcalendar/rrule": "^6.1.17",

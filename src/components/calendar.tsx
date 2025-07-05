@@ -2,6 +2,7 @@ import { useMemo, useEffect } from 'react';
 
 import type { EventContentArg } from '@fullcalendar/core';
 import FullCalendar from '@fullcalendar/react'
+import interaction from '@fullcalendar/interaction';
 import dayGrid from '@fullcalendar/daygrid'
 import multiMonth from '@fullcalendar/multimonth'
 import rrulePlugin from '@fullcalendar/rrule'
@@ -88,7 +89,7 @@ export default function Calendar({
     <div className='max-w-7xl mx-auto mt-8'>
       <FullCalendar
         ref={calendarRef} 
-        plugins={[ dayGrid, multiMonth, rrulePlugin ]}
+        plugins={[ interaction, dayGrid, multiMonth, rrulePlugin ]}
         initialView="dayGridMonth"
         headerToolbar={{
           left: 'prev,next today',
@@ -110,6 +111,7 @@ export default function Calendar({
         eventBackgroundColor={'transparent'}
         eventBorderColor={'transparent'}
         eventContent={renderAvatar}
+        selectable={true}
       />
     </div>
   )
