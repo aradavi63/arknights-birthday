@@ -76,15 +76,26 @@ function renderAvatar(arg: EventContentArg) {
 
 export default function Calendar({
   setUnknownDob,
-  calendarRef
+  calendarRef,
+  selectedDate,
+  setSelectedDate
 }: {
   setUnknownDob: React.Dispatch<React.SetStateAction<{ name: string; image: string }[]>>,
-  calendarRef: React.RefObject<FullCalendar | null>
+  calendarRef: React.RefObject<FullCalendar | null>,
+  selectedDate?: string | null,
+  setSelectedDate?: (date: string) => void
 }) {
   const { events: bdayEvents, unknownDob } = useMemo(() => addBirthdays(), []);
   useEffect(() => {
     setUnknownDob(unknownDob);
   }, [unknownDob, setUnknownDob]);
+
+  useEffect(() => {
+    if (selectedDate && calendarRef.current) {
+      calendarRef.current.getApi().gotoDate(selectedDate);
+    }
+  }, [selectedDate, calendarRef]);
+
   return (
     <div className='max-w-7xl mx-auto mt-8'>
       <FullCalendar
@@ -111,7 +122,29 @@ export default function Calendar({
         eventBackgroundColor={'transparent'}
         eventBorderColor={'transparent'}
         eventContent={renderAvatar}
-        selectable={true}
+        dateClick={arg => {
+          if (setSelectedDate) {
+            const localDate = arg.date;
+            const yyyy = localDate.getFullYear();
+            const mm = String(localDate.getMonth() + 1).padStart(2, '0');
+            const dd = String(localDate.getDate()).padStart(2, '0');
+            const formattedDate = `${yyyy}-${mm}-${dd}`;
+            console.log('Selected date:', formattedDate); 
+            setSelectedDate(formattedDate); 
+          }
+        }}
+        dayCellClassNames={arg => {
+          if (selectedDate) {
+            const yyyy = arg.date.getFullYear();
+            const mm = String(arg.date.getMonth() + 1).padStart(2, '0');
+            const dd = String(arg.date.getDate()).padStart(2, '0');
+            const localDateStr = `${yyyy}-${mm}-${dd}`;
+            if (localDateStr === selectedDate) {
+              return ['highlighted-date'];
+            }
+          }
+          return [];
+        }}
       />
     </div>
   )

@@ -53,3 +53,7 @@
   width: auto !important;
   margin: 2px !important;
 }
+
+.highlighted-date {
+  background: color-mix(in srgb, var(--color-accent) 10%, transparent) !important;
+}

@@ -12,10 +12,11 @@ interface Operator {
 
 export default function Searchbar({
     unknownDob,
-    calendarRef
+    setSelectedDate
 }: {
     unknownDob: { name: string; image: string }[],
-    calendarRef: React.RefObject<FullCalendar | null>
+    calendarRef: React.RefObject<FullCalendar | null>,
+    setSelectedDate: (date: string) => void
 }) {
     const inputRef = useRef<HTMLInputElement>(null);
 
@@ -39,13 +40,13 @@ export default function Searchbar({
         );
         if (op && op.dob && !unknownDob.some(u => u.name === op.name)) {
             const dateStr = '2025-' + op.dob;
-            calendarRef.current?.getApi().gotoDate(dateStr);
+            setSelectedDate(dateStr); 
             return;
         }
         const dateMatch = value.match(/^(\d{4})[/-](\d{2})[/-](\d{2})$/);
         if (dateMatch) {
             const dateStr = `${dateMatch[1]}-${dateMatch[2]}-${dateMatch[3]}`;
-            calendarRef.current?.getApi().gotoDate(dateStr);
+            setSelectedDate(dateStr); 
             return;
         }
         alert('No operator or date found. Please check your input.');
@@ -60,7 +61,7 @@ export default function Searchbar({
                 <form onSubmit={Search}>
                     <div className="flex items-center justify-center mx-auto">
                         <input ref={inputRef} type='search' className='border-2 rounded-lg m-2 p-2' placeholder='Amiya or 2025/12/23'/>
-                        <button type='submit' className='btn flex items-center gap-2 rounded-lg p-2 bg-secondary text-lg text-textWhite font-montserrat'>
+                        <button type='submit' className='btn flex items-center gap-2 rounded-lg p-2 bg-secondary hover:bg-secondary-dark text-lg text-textWhite font-montserrat'>
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" viewBox="0 0 24 24" fill="#dfe2df">
                                 <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5
                                 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5
