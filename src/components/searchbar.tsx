@@ -2,7 +2,7 @@ import '../styles/app.css'
 import operatorData from '../operators.json'
 import FullCalendar from '@fullcalendar/react'
 import Fuse from 'fuse.js'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 
 interface Operator {
     id: string;
@@ -20,9 +20,10 @@ export default function Searchbar({
     setSelectedDate: (date: string) => void
 }) {
     const inputRef = useRef<HTMLInputElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null); 
     // Autocomplete suggestions
     const [suggestions, setSuggestions] = useState<{ name: string; image: string }[]>([]);
-    const fuseOptions = {keys: ['name']};
+    const fuseOptions = {threshold: 0.5, distance: 5, keys: ['name']};
     const fuse = new Fuse(
         Object.values(operatorData),
         fuseOptions
@@ -47,6 +48,7 @@ export default function Searchbar({
 
     function Search(e: React.FormEvent) {
         e.preventDefault();
+        setSuggestions([]);
         const value = inputRef.current?.value.trim();
         if (!value) return;
 
@@ -78,6 +80,21 @@ export default function Searchbar({
         alert('No operator or date found. Please check your input.');
     }
 
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (
+                containerRef.current &&
+                !containerRef.current.contains(event.target as Node)
+            ) {
+                setSuggestions([]);
+            }
+        }
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
     return (
         <div className='grid grid-rows-1 items-center justify-center mx-auto mt-2'>
             <div className='row-span-1 mt-2 mb-2'>
@@ -85,24 +102,27 @@ export default function Searchbar({
             </div>
             <div>
                 <form onSubmit={Search}>
-                    <div className="flex flex-col items-center justify-center mx-auto relative">
+                    <div
+                        ref={containerRef}
+                        className="flex flex-col items-center justify-center mx-auto relative"
+                    >
                         <input
                             ref={inputRef}
                             type='search'
-                            className='border-2 rounded-lg m-2 p-2'
+                            className='border-2 rounded-lg m-2 p-2 focus:outline-none'
                             placeholder='Amiya or 2025/12/23'
                             onChange={handleInputChange}
                             autoComplete="off"
                         />
                         {suggestions.length > 0 && (
-                            <ul className="absolute top-full left-0 w-full bg-white border rounded-lg shadow z-10 max-h-60 overflow-y-auto">
+                            <ul className="absolute top-full left-0 w-full bg-background border border-primary rounded-lg shadow z-10 max-h-60 overflow-y-auto">
                                 {suggestions.map(s => (
                                     <li
                                         key={s.name}
-                                        className="p-2 hover:bg-secondary cursor-pointer flex items-center"
+                                        className="p-2 hover:bg-secondary text-textBlack hover:text-textWhite cursor-pointer flex items-center"
                                         onClick={() => handleSuggestionClick(s.name)}
                                     >
-                                        <img src={s.image} alt={s.name} className="w-6 h-6 mr-2 rounded-full" />
+                                        <img src={s.image} alt={s.name} className="w-6 h-6 mr-2" />
                                         {s.name}
                                     </li>
                                 ))}
