@@ -1,7 +1,8 @@
 import '../styles/app.css'
 import operatorData from '../operators.json'
 import FullCalendar from '@fullcalendar/react'
-import { useRef } from 'react'
+import Fuse from 'fuse.js'
+import { useRef, useState } from 'react'
 
 interface Operator {
     id: string;
@@ -12,13 +13,37 @@ interface Operator {
 
 export default function Searchbar({
     unknownDob,
-    setSelectedDate
+    setSelectedDate,
 }: {
     unknownDob: { name: string; image: string }[],
     calendarRef: React.RefObject<FullCalendar | null>,
     setSelectedDate: (date: string) => void
 }) {
     const inputRef = useRef<HTMLInputElement>(null);
+    // Autocomplete suggestions
+    const [suggestions, setSuggestions] = useState<{ name: string; image: string }[]>([]);
+    const fuseOptions = {keys: ['name']};
+    const fuse = new Fuse(
+        Object.values(operatorData),
+        fuseOptions
+    );
+
+    function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
+        const value = e.target.value;
+        if (!value) {
+            setSuggestions([]);
+            return;
+        }
+        const results = fuse.search(value).map(r => r.item);
+        setSuggestions(results.slice(0, 8)); // show top 8
+    }
+
+    function handleSuggestionClick(name: string) {
+        if (inputRef.current) {
+            inputRef.current.value = name;
+            setSuggestions([]);
+        }
+    }
 
     function Search(e: React.FormEvent) {
         e.preventDefault();
@@ -59,8 +84,29 @@ export default function Searchbar({
             </div>
             <div>
                 <form onSubmit={Search}>
-                    <div className="flex items-center justify-center mx-auto">
-                        <input ref={inputRef} type='search' className='border-2 rounded-lg m-2 p-2' placeholder='Amiya or 2025/12/23'/>
+                    <div className="flex flex-col items-center justify-center mx-auto relative">
+                        <input
+                            ref={inputRef}
+                            type='search'
+                            className='border-2 rounded-lg m-2 p-2'
+                            placeholder='Amiya or 2025/12/23'
+                            onChange={handleInputChange}
+                            autoComplete="off"
+                        />
+                        {suggestions.length > 0 && (
+                            <ul className="absolute top-full left-0 w-full bg-white border rounded-lg shadow z-10 max-h-60 overflow-y-auto">
+                                {suggestions.map(s => (
+                                    <li
+                                        key={s.name}
+                                        className="p-2 hover:bg-secondary cursor-pointer flex items-center"
+                                        onClick={() => handleSuggestionClick(s.name)}
+                                    >
+                                        <img src={s.image} alt={s.name} className="w-6 h-6 mr-2 rounded-full" />
+                                        {s.name}
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
                         <button type='submit' className='btn flex items-center gap-2 rounded-lg p-2 bg-secondary hover:bg-secondary-dark text-lg text-textWhite font-montserrat'>
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" viewBox="0 0 24 24" fill="#dfe2df">
                                 <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5
