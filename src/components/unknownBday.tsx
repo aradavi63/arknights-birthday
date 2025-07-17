@@ -2,7 +2,7 @@ import '../styles/app.css'
 
 export default function UnknownBdayBox({ unknownDob }: { unknownDob: { name: string; image: string }[] }) {
     return (
-        <div className="flex flex-col items-center justify-center m-8">
+        <div className="flex flex-col items-center justify-center m-8" id="unknownBox">
             <h1 className="text-4xl text-textBlack font-oswald font-semibold text-center">
                 Unknown Birthdays
             </h1>

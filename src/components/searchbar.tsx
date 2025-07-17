@@ -52,11 +52,12 @@ export default function Searchbar({
 
         const unknown = unknownDob.find(op => op.name.toLowerCase() === value.toLowerCase());
         if (unknown) {
-            const unknownBox = document.querySelector('h1:text("Unknown Birthdays")')?.parentElement;
+            const unknownBox = document.getElementById('unknownBox')?.parentElement;
             if (unknownBox) {
-                unknownBox.scrollIntoView({ behavior: 'smooth' });
-            } else {
-                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                window.scrollTo({ 
+                    top: document.documentElement.scrollHeight,
+                    behavior: 'smooth' 
+                });
             }
             return;
         }
