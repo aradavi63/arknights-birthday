@@ -1080,6 +1080,12 @@
     "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_2015_dusk.png"
   },
   {
+    "id": "char_1011_lava2",
+    "name": "Lava the Purgatory",
+    "dob": "06-22",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_1011_lava2.png"
+  },
+  {
     "id": "char_456_ash",
     "name": "Ash",
     "dob": "12-24",
@@ -2026,5 +2032,29 @@
     "name": "Rose Salt",
     "dob": "03-30",
     "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4163_rosesa.png"
+  },
+  {
+    "id": "char_4052_surfer",
+    "name": "Surfer",
+    "dob": "05-03",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4052_surfer.png"
+  },
+  {
+    "id": "char_2026_yu",
+    "name": "Yu",
+    "dob": "12-12",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_2026_yu.png"
+  },
+  {
+    "id": "char_1040_blaze2",
+    "name": "Blaze the Igniting Spark",
+    "dob": "03-24",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_1040_blaze2.png"
+  },
+  {
+    "id": "char_4172_xingzh",
+    "name": "Xingzhu",
+    "dob": "03-24",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4172_xingzh.png"
   }
 ]
