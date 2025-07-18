@@ -96,6 +96,27 @@ export default function Calendar({
     }
   }, [selectedDate, calendarRef]);
 
+  // Forces calendar to correct size on initial render
+  useEffect(() => {
+  if (calendarRef.current) {
+    setTimeout(() => {
+      calendarRef.current?.getApi().updateSize();
+    }, 0);
+  }
+}, [calendarRef]);
+
+  useEffect(() => {
+    function handleResize() {
+      if (calendarRef.current) {
+        calendarRef.current.getApi().updateSize();
+      }
+    }
+    window.addEventListener('resize', handleResize);
+    // Initial call
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, [calendarRef]);
+
   return (
     <div className='max-w-7xl mx-auto mt-8'>
       <FullCalendar
