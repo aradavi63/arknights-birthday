@@ -60,15 +60,12 @@ function renderAvatar(arg: EventContentArg) {
       height: '100%',
       width: '100%'
     }}>
-      <img 
-        src={imageUrl} 
+      <img
+        src={imageUrl}
         alt={arg.event.title}
         title={arg.event.title}
-        style={{
-          width: '48px',
-          height: '48px',
-          cursor: 'pointer'
-        }}
+        className="w-8 h-8 sm:w-12 sm:h-12"
+        style={{ cursor: 'pointer' }}
       />
     </div>
   );
@@ -117,8 +114,13 @@ export default function Calendar({
     return () => window.removeEventListener('resize', handleResize);
   }, [calendarRef]);
 
+  let windowMobile = 1.2 
+  if (window.innerWidth < 640) {
+    windowMobile = 0.6
+  }
+
   return (
-    <div className='max-w-7xl mx-auto mt-8'>
+    <div className="w-full max-w-7xl mx-auto mt-4 sm:mt-8 px-2 sm:px-0"> {/* Added px-2 for mobile padding */}
       <FullCalendar
         ref={calendarRef} 
         plugins={[ interaction, dayGrid, multiMonth, rrulePlugin ]}
@@ -138,7 +140,9 @@ export default function Calendar({
         validRange={{start:'1970-01-01'}}
         fixedWeekCount={false}
         showNonCurrentDates={false}
-        height={750}
+        height="auto"
+        contentHeight="auto"
+        aspectRatio={windowMobile} 
         events={bdayEvents}
         eventBackgroundColor={'transparent'}
         eventBorderColor={'transparent'}
