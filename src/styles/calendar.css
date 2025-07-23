@@ -10,6 +10,8 @@
   padding: 8px 16px !important;
   transition: all 0.2s ease !important;
   border-color: var(--color-primary) !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .fc-button-active, .fc-button:hover:not(:disabled) {
@@ -58,6 +60,36 @@
   background: color-mix(in srgb, var(--color-accent) 10%, transparent) !important;
 }
 
+@media (max-width: 639px) {
+  /* Center the toolbar and its content */
+  .fc .fc-toolbar {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    width: 100%;
+    text-align: center;
+  }
+  /* Reorder: title first, then view buttons, then nav buttons */
+  .fc .fc-toolbar .fc-toolbar-chunk {
+    width: 100%;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 0.25rem;
+  }
+  .fc .fc-toolbar .fc-toolbar-chunk:nth-child(1) { order: 3; } /* Title */
+  .fc .fc-toolbar .fc-toolbar-chunk:nth-child(3) { order: 2; } /* View buttons */
+  .fc .fc-toolbar .fc-toolbar-chunk:nth-child(2) { order: 1; } /* Prev/Next/Today */
+  .fc-toolbar-title {
+    margin-bottom: 0.25rem;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
 @media (max-width: 640px) {
   .fc-toolbar-title {
     font-size: 1.1rem !important;
@@ -69,9 +101,6 @@
   .fc .fc-daygrid-day-frame {
     padding: 2px !important;
   }
-}
-
-@media (max-width: 640px) {
   .fc-event .w-8, .fc-event .h-8 {
     width: 1.5rem !important;
     height: 1.5rem !important;
