@@ -89,7 +89,7 @@ function extractInfoFromStoryText(storyText: string): { name?: string; dob?: str
       break
     }
   }
-  if (dob && dob.endsWith('th')) { // Flint's birthday is the only one with ordinals, need to clean
+  if (dob && (dob.endsWith('th') || dob.endsWith('st') || dob.endsWith('nd') || dob.endsWith('rd'))) { // Flint's birthday is the only one with ordinals, need to clean
     dob = dob.slice(0,-2); 
   }
   if (dob) {
