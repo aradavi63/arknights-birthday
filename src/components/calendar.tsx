@@ -52,7 +52,6 @@ function addBirthdays() {
 
 function renderAvatar(arg: EventContentArg) {
   const imageUrl = arg.event.extendedProps.image;
-  // Check if current view is multiMonthYear
   const isMultiMonth = arg.view.type === "multiMonthYear";
   return (
     <div style={{ 
@@ -122,7 +121,7 @@ export default function Calendar({
   }
 
   return (
-    <div className="w-full max-w-7xl mx-auto mt-4 sm:mt-8 px-2 sm:px-0"> {/* Added px-2 for mobile padding */}
+    <div className="w-full max-w-7xl mx-auto mt-4 sm:mt-8 px-2 sm:px-0"> 
       <FullCalendar
         ref={calendarRef} 
         plugins={[ interaction, dayGrid, multiMonth, rrulePlugin ]}
@@ -140,7 +139,6 @@ export default function Calendar({
           day: 'Day'
         }}
         validRange={{start:'1970-01-01'}}
-        fixedWeekCount={true}
         showNonCurrentDates={false}
         dayMaxEventRows={false}
         height="auto"
