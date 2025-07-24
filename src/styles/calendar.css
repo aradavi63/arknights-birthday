@@ -60,8 +60,19 @@
   background: color-mix(in srgb, var(--color-accent) 10%, transparent) !important;
 }
 
+.fc-multimonth-daygrid {
+  min-height: 80px !important; 
+}
+
+.fc-more-link {
+  font-size: 0.72rem !important;
+}
+
+.fc-daygrid-day-frame {
+  min-height: 62px !important; 
+}
+
 @media (max-width: 639px) {
-  /* Center the toolbar and its content */
   .fc .fc-toolbar {
     flex-direction: column !important;
     align-items: center !important;
@@ -70,7 +81,6 @@
     width: 100%;
     text-align: center;
   }
-  /* Reorder: title first, then view buttons, then nav buttons */
   .fc .fc-toolbar .fc-toolbar-chunk {
     width: 100%;
     display: flex !important;
@@ -108,5 +118,10 @@
   .fc-event .sm\:w-12, .fc-event .sm\:h-12 {
     width: 1.5rem !important;
     height: 1.5rem !important;
+  }
+  .fc-more-link {
+    outline: 1px solid var(--color-secondary) !important;
+    border-radius: 4px !important;
+    font-size: 0.62rem !important;
   }
 }

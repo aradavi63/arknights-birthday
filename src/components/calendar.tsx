@@ -52,6 +52,8 @@ function addBirthdays() {
 
 function renderAvatar(arg: EventContentArg) {
   const imageUrl = arg.event.extendedProps.image;
+  // Check if current view is multiMonthYear
+  const isMultiMonth = arg.view.type === "multiMonthYear";
   return (
     <div style={{ 
       display: 'flex', 
@@ -64,7 +66,7 @@ function renderAvatar(arg: EventContentArg) {
         src={imageUrl}
         alt={arg.event.title}
         title={arg.event.title}
-        className="w-8 h-8 sm:w-12 sm:h-12"
+        className={isMultiMonth ? "w-5 h-5 sm:w-7 sm:h-7" : "w-8 h-8 sm:w-12 sm:h-12"}
         style={{ cursor: 'pointer' }}
       />
     </div>
@@ -138,8 +140,9 @@ export default function Calendar({
           day: 'Day'
         }}
         validRange={{start:'1970-01-01'}}
-        fixedWeekCount={false}
+        fixedWeekCount={true}
         showNonCurrentDates={false}
+        dayMaxEventRows={false}
         height="auto"
         contentHeight="auto"
         aspectRatio={windowMobile} 
