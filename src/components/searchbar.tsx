@@ -1,5 +1,6 @@
 import '../styles/app.css'
 import operatorData from '../operators.json'
+import Alert from './alert'
 import FullCalendar from '@fullcalendar/react'
 import Fuse from 'fuse.js'
 import { useRef, useState, useEffect } from 'react'
@@ -46,6 +47,7 @@ export default function Searchbar({
         }
     }
 
+    const [showAlert, setShowAlert] = useState(false);
     function Search(e: React.FormEvent) {
         e.preventDefault();
         setSuggestions([]);
@@ -91,7 +93,8 @@ export default function Searchbar({
             }, 100); 
             return;
         }
-        alert('No operator or date found. Please check your input.');
+        setShowAlert(true);
+        setTimeout(() => setShowAlert(false), 2000);
     }
 
     useEffect(() => {
@@ -120,6 +123,7 @@ export default function Searchbar({
                         ref={containerRef}
                         className="flex flex-col items-center justify-center mx-auto relative"
                     >
+                        {showAlert && <Alert />}
                         <input
                             ref={inputRef}
                             type='search'
