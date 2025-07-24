@@ -89,7 +89,7 @@ function extractInfoFromStoryText(storyText: string): { name?: string; dob?: str
       break
     }
   }
-  if (dob && dob.endsWith('th')) { // Flint's birthday is the only one with ordinals, need to clean
+  if (dob && (dob.endsWith('th') || dob.endsWith('st') || dob.endsWith('nd') || dob.endsWith('rd'))) { // Flint's birthday is the only one with ordinals, need to clean
     dob = dob.slice(0,-2); 
   }
   if (dob) {
@@ -131,10 +131,16 @@ async function fetchOperatorJson(): Promise<OperatorData[]> {
       }
 
       if (seenNames.has(name)) {
-        continue;
-      }
-      else if (name === 'Lava the Purgatory' && seenNames.has('Lava')) { // The only alter who has the full title inside handbook
-        continue;
+        if (name === 'Blaze') {
+          // Blaze alter has birthday unlike regular Blaze, let it through
+          if (dob === '03-24') {
+            name = 'Blaze the Igniting Spark'
+          }
+        } else if (name === 'Lava the Purgatory' && seenNames.has('Lava')) {
+          continue; // Only alter listed with full title
+        } else {
+          continue; // Skip alters
+        }
       }
       seenNames.add(name);
 

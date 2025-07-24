@@ -14,7 +14,7 @@ export default function UnknownBdayBox({ unknownDob }: { unknownDob: { name: str
                         src={image}
                         alt={name}
                         title={name}
-                        className="w-16 h-16 m-2 object-cover"
+                        className="w-8 h-8 sm:w-16 sm:h-16 m-2 object-cover"
                     />
                 ))}
             </div>

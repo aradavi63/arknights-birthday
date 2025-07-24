@@ -52,6 +52,7 @@ function addBirthdays() {
 
 function renderAvatar(arg: EventContentArg) {
   const imageUrl = arg.event.extendedProps.image;
+  const isMultiMonth = arg.view.type === "multiMonthYear";
   return (
     <div style={{ 
       display: 'flex', 
@@ -60,15 +61,12 @@ function renderAvatar(arg: EventContentArg) {
       height: '100%',
       width: '100%'
     }}>
-      <img 
-        src={imageUrl} 
+      <img
+        src={imageUrl}
         alt={arg.event.title}
         title={arg.event.title}
-        style={{
-          width: '48px',
-          height: '48px',
-          cursor: 'pointer'
-        }}
+        className={isMultiMonth ? "w-5 h-5 sm:w-7 sm:h-7" : "w-8 h-8 sm:w-12 sm:h-12"}
+        style={{ cursor: 'pointer' }}
       />
     </div>
   );
@@ -96,8 +94,34 @@ export default function Calendar({
     }
   }, [selectedDate, calendarRef]);
 
+  // Forces calendar to correct size on initial render
+  useEffect(() => {
+  if (calendarRef.current) {
+    setTimeout(() => {
+      calendarRef.current?.getApi().updateSize();
+    }, 0);
+  }
+}, [calendarRef]);
+
+  useEffect(() => {
+    function handleResize() {
+      if (calendarRef.current) {
+        calendarRef.current.getApi().updateSize();
+      }
+    }
+    window.addEventListener('resize', handleResize);
+    // Initial call
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, [calendarRef]);
+
+  let windowMobile = 1.2 
+  if (window.innerWidth < 640) {
+    windowMobile = 0.6
+  }
+
   return (
-    <div className='max-w-7xl mx-auto mt-8'>
+    <div className="w-full max-w-7xl mx-auto mt-4 sm:mt-8 px-2 sm:px-0"> 
       <FullCalendar
         ref={calendarRef} 
         plugins={[ interaction, dayGrid, multiMonth, rrulePlugin ]}
@@ -115,9 +139,11 @@ export default function Calendar({
           day: 'Day'
         }}
         validRange={{start:'1970-01-01'}}
-        fixedWeekCount={false}
         showNonCurrentDates={false}
-        height={750}
+        dayMaxEventRows={false}
+        height="auto"
+        contentHeight="auto"
+        aspectRatio={windowMobile} 
         events={bdayEvents}
         eventBackgroundColor={'transparent'}
         eventBorderColor={'transparent'}

@@ -69,12 +69,26 @@ export default function Searchbar({
         if (op && op.dob && !unknownDob.some(u => u.name === op.name)) {
             const dateStr = '2025-' + op.dob;
             setSelectedDate(dateStr); 
+
+            setTimeout(() => {
+                const cell = document.querySelector(`.fc-day[data-date="${dateStr}"]`);
+                if (cell) {
+                    (cell as HTMLElement).scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }, 100); 
             return;
         }
         const dateMatch = value.match(/^(\d{4})[/-](\d{2})[/-](\d{2})$/);
         if (dateMatch) {
             const dateStr = `${dateMatch[1]}-${dateMatch[2]}-${dateMatch[3]}`;
             setSelectedDate(dateStr); 
+
+            setTimeout(() => {
+                const cell = document.querySelector(`.fc-day[data-date="${dateStr}"]`);
+                if (cell) {
+                    (cell as HTMLElement).scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }, 100); 
             return;
         }
         alert('No operator or date found. Please check your input.');
@@ -98,7 +112,7 @@ export default function Searchbar({
     return (
         <div className='grid grid-rows-1 items-center justify-center mx-auto mt-2'>
             <div className='row-span-1 mt-2 mb-2'>
-                <h2 className='text-2xl text-textBlack font-montserrat font-semibold'>Search for an operator or date (YYYY/MM/DD)</h2>
+                <h2 className='text-sm md:text-2xl text-textBlack font-montserrat font-semibold'>Search for an operator or date (YYYY/MM/DD)</h2>
             </div>
             <div>
                 <form onSubmit={Search}>
@@ -109,7 +123,7 @@ export default function Searchbar({
                         <input
                             ref={inputRef}
                             type='search'
-                            className='border-2 rounded-lg m-2 p-2 focus:outline-none'
+                            className='border-2 rounded-lg m-2 p-1 text-sm w-full max-w-xs sm:p-2 sm:text-base sm:max-w-md focus:outline-none'
                             placeholder='Amiya or 2025/12/23'
                             onChange={handleInputChange}
                             autoComplete="off"
@@ -119,7 +133,7 @@ export default function Searchbar({
                                 {suggestions.map(s => (
                                     <li
                                         key={s.name}
-                                        className="p-2 hover:bg-secondary text-textBlack hover:text-textWhite cursor-pointer flex items-center"
+                                        className="w-full max-w-xs sm:p-2 sm:text-base sm:max-w-xl hover:bg-secondary text-textBlack hover:text-textWhite cursor-pointer flex items-center"
                                         onClick={() => handleSuggestionClick(s.name)}
                                     >
                                         <img src={s.image} alt={s.name} className="w-6 h-6 mr-2" />
@@ -128,8 +142,11 @@ export default function Searchbar({
                                 ))}
                             </ul>
                         )}
-                        <button type='submit' className='btn flex items-center gap-2 rounded-lg p-2 bg-secondary hover:bg-secondary-dark text-lg text-textWhite font-montserrat'>
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" viewBox="0 0 24 24" fill="#dfe2df">
+                        <button
+                            type='submit'
+                            className='btn flex items-center gap-2 rounded-lg p-1 text-base sm:p-2 sm:text-lg bg-secondary hover:bg-secondary-dark text-textWhite font-montserrat'
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" width="20px" viewBox="0 0 24 24" fill="#dfe2df">
                                 <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5
                                 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5
                                 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5
