@@ -1,5 +1,6 @@
 import '../styles/app.css'
 import operatorData from '../operators.json'
+import Alert from './alert'
 import FullCalendar from '@fullcalendar/react'
 import Fuse from 'fuse.js'
 import { useRef, useState, useEffect } from 'react'
@@ -46,6 +47,7 @@ export default function Searchbar({
         }
     }
 
+    const [showAlert, setShowAlert] = useState(false);
     function Search(e: React.FormEvent) {
         e.preventDefault();
         setSuggestions([]);
@@ -80,18 +82,34 @@ export default function Searchbar({
         }
         const dateMatch = value.match(/^(\d{4})[/-](\d{2})[/-](\d{2})$/);
         if (dateMatch) {
-            const dateStr = `${dateMatch[1]}-${dateMatch[2]}-${dateMatch[3]}`;
-            setSelectedDate(dateStr); 
+        const [year, month, day] = dateMatch;
+        const dateStr = `${year}-${month}-${day}`;
+
+        const dateObj = new Date(`${year}-${month}-${day}`);
+        const isValidDate =
+            dateObj instanceof Date &&
+            !isNaN(dateObj.getTime()) &&
+            dateObj.getFullYear() === parseInt(year) &&
+            dateObj.getMonth() + 1 === parseInt(month) &&
+            dateObj.getDate() === parseInt(day);
+
+        if (isValidDate) {
+            setSelectedDate(dateStr);
 
             setTimeout(() => {
-                const cell = document.querySelector(`.fc-day[data-date="${dateStr}"]`);
-                if (cell) {
-                    (cell as HTMLElement).scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-            }, 100); 
+            const cell = document.querySelector(`.fc-day[data-date="${dateStr}"]`);
+            if (cell) {
+                (cell as HTMLElement).scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                setShowAlert(true);
+                setTimeout(() => setShowAlert(false), 2000);
+            }
+            }, 100);
             return;
+            }
         }
-        alert('No operator or date found. Please check your input.');
+        setShowAlert(true);
+        setTimeout(() => setShowAlert(false), 2000);
     }
 
     useEffect(() => {
@@ -120,6 +138,7 @@ export default function Searchbar({
                         ref={containerRef}
                         className="flex flex-col items-center justify-center mx-auto relative"
                     >
+                        {showAlert && <Alert />}
                         <input
                             ref={inputRef}
                             type='search'
