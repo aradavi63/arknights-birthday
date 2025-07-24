@@ -82,16 +82,31 @@ export default function Searchbar({
         }
         const dateMatch = value.match(/^(\d{4})[/-](\d{2})[/-](\d{2})$/);
         if (dateMatch) {
-            const dateStr = `${dateMatch[1]}-${dateMatch[2]}-${dateMatch[3]}`;
-            setSelectedDate(dateStr); 
+        const [year, month, day] = dateMatch;
+        const dateStr = `${year}-${month}-${day}`;
+
+        const dateObj = new Date(`${year}-${month}-${day}`);
+        const isValidDate =
+            dateObj instanceof Date &&
+            !isNaN(dateObj.getTime()) &&
+            dateObj.getFullYear() === parseInt(year) &&
+            dateObj.getMonth() + 1 === parseInt(month) &&
+            dateObj.getDate() === parseInt(day);
+
+        if (isValidDate) {
+            setSelectedDate(dateStr);
 
             setTimeout(() => {
-                const cell = document.querySelector(`.fc-day[data-date="${dateStr}"]`);
-                if (cell) {
-                    (cell as HTMLElement).scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-            }, 100); 
+            const cell = document.querySelector(`.fc-day[data-date="${dateStr}"]`);
+            if (cell) {
+                (cell as HTMLElement).scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                setShowAlert(true);
+                setTimeout(() => setShowAlert(false), 2000);
+            }
+            }, 100);
             return;
+            }
         }
         setShowAlert(true);
         setTimeout(() => setShowAlert(false), 2000);
