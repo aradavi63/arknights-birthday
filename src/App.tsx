@@ -5,6 +5,8 @@ import UnknownBdayBox from './components/unknownBday'
 import Searchbar from './components/searchbar'
 import './styles/app.css'
 import type FullCalendar from '@fullcalendar/react'
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 export default function App() {
   const [unknownDob, setUnknownDob] = useState<{ name: string; image: string }[]>([]);
@@ -14,6 +16,8 @@ export default function App() {
   return (
     <>
     <Header />
+    <Analytics />
+    <SpeedInsights />
     <div className='grid grid-flow-col grid-rows-1 gap-3'>
       <div className='row-span-1'>
         <Searchbar

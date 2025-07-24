@@ -129,7 +129,8 @@ export default function Searchbar({
 
     return (
         <div className='grid grid-rows-1 items-center justify-center mx-auto mt-2'>
-            <div className='row-span-1 mt-2 mb-2'>
+            <div className='row-span-1 mt-2 mb-2 text-center'>
+                <h2 className='text-xs md:text-base text-textBlack font-montserrat'>Find the birthdays of your favorite characters from Arknights!</h2>
                 <h2 className='text-sm md:text-2xl text-textBlack font-montserrat font-semibold'>Search for an operator or date (YYYY/MM/DD)</h2>
             </div>
             <div>
