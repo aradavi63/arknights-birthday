@@ -69,12 +69,26 @@ export default function Searchbar({
         if (op && op.dob && !unknownDob.some(u => u.name === op.name)) {
             const dateStr = '2025-' + op.dob;
             setSelectedDate(dateStr); 
+
+            setTimeout(() => {
+                const cell = document.querySelector(`.fc-day[data-date="${dateStr}"]`);
+                if (cell) {
+                    (cell as HTMLElement).scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }, 100); 
             return;
         }
         const dateMatch = value.match(/^(\d{4})[/-](\d{2})[/-](\d{2})$/);
         if (dateMatch) {
             const dateStr = `${dateMatch[1]}-${dateMatch[2]}-${dateMatch[3]}`;
             setSelectedDate(dateStr); 
+
+            setTimeout(() => {
+                const cell = document.querySelector(`.fc-day[data-date="${dateStr}"]`);
+                if (cell) {
+                    (cell as HTMLElement).scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }, 100); 
             return;
         }
         alert('No operator or date found. Please check your input.');
@@ -119,7 +133,7 @@ export default function Searchbar({
                                 {suggestions.map(s => (
                                     <li
                                         key={s.name}
-                                        className="w-full max-w-xs sm:p-2 sm:text-base sm:max-w-md hover:bg-secondary text-textBlack hover:text-textWhite cursor-pointer flex items-center"
+                                        className="w-full max-w-xs sm:p-2 sm:text-base sm:max-w-xl hover:bg-secondary text-textBlack hover:text-textWhite cursor-pointer flex items-center"
                                         onClick={() => handleSuggestionClick(s.name)}
                                     >
                                         <img src={s.image} alt={s.name} className="w-6 h-6 mr-2" />
