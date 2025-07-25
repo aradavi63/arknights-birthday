@@ -82,7 +82,7 @@ export default function Searchbar({
         }
         const dateMatch = value.match(/^(\d{4})[/-](\d{2})[/-](\d{2})$/);
         if (dateMatch) {
-        const [year, month, day] = dateMatch;
+        const [, year, month, day] = dateMatch;
         const dateStr = `${year}-${month}-${day}`;
 
         const dateObj = new Date(`${year}-${month}-${day}`);
