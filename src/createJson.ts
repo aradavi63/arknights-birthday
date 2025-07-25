@@ -136,11 +136,13 @@ async function fetchOperatorJson(): Promise<OperatorData[]> {
           if (dob === '03-24') {
             name = 'Blaze the Igniting Spark'
           }
-        } else if (name === 'Lava the Purgatory' && seenNames.has('Lava')) {
-          continue; // Only alter listed with full title
-        } else {
+        } 
+        else {
           continue; // Skip alters
         }
+      }
+      if (name === 'Lava the Purgatory' && seenNames.has('Lava')) {
+        continue; // Only alter listed with full title
       }
       seenNames.add(name);
 
