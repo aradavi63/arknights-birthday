@@ -2046,6 +2046,18 @@
     "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_1040_blaze2.png"
   },
   {
+    "id": "char_4173_nowell",
+    "name": "Nowell",
+    "dob": "12-25",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4173_nowell.png"
+  },
+  {
+    "id": "char_4010_etlchi",
+    "name": "Entelechia",
+    "dob": "12-31",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4010_etlchi.png"
+  },
+  {
     "id": "char_4172_xingzh",
     "name": "Xingzhu",
     "dob": "03-24",
