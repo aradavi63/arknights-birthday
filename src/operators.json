@@ -2062,5 +2062,23 @@
     "name": "Xingzhu",
     "dob": "03-24",
     "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4172_xingzh.png"
+  },
+  {
+    "id": "char_450_necras",
+    "name": "Necrass",
+    "dob": "10-16",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_450_necras.png"
+  },
+  {
+    "id": "char_4171_wulfen",
+    "name": "Wulfenite",
+    "dob": "12-01",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4171_wulfen.png"
+  },
+  {
+    "id": "char_4177_brigid",
+    "name": "Brigid",
+    "dob": "02-01",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4177_brigid.png"
   }
 ]
