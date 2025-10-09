@@ -2080,5 +2080,23 @@
     "name": "Brigid",
     "dob": "02-01",
     "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4177_brigid.png"
+  },
+  {
+    "id": "char_4178_alanna",
+    "name": "Alanna",
+    "dob": "04-17",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4178_alanna.png"
+  },
+  {
+    "id": "char_4179_monstr",
+    "name": "Mon3tr",
+    "dob": "07-25",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4179_monstr.png"
+  },
+  {
+    "id": "char_445_wscoot",
+    "name": "Windscoot",
+    "dob": "11-05",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_445_wscoot.png"
   }
 ]
