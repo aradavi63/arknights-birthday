@@ -79,6 +79,9 @@ function extractInfoFromStoryText(storyText: string): { name?: string; dob?: str
     else if (line.startsWith('[Model]')) {
       name = line.replace('[Model]', '').trim();
     }
+    else if (line.startsWith('[Serial Number]')) {
+      name = line.replace('[Serial Number]', '').trim();
+    }
     if (line.startsWith('[Date of Birth]')) {
       dob = line.replace('[Date of Birth]', '').trim();
     }
@@ -143,6 +146,9 @@ async function fetchOperatorJson(): Promise<OperatorData[]> {
       }
       if (name === 'Lava the Purgatory' && seenNames.has('Lava')) {
         continue; // Only alter listed with full title
+      }
+      if (name === 'Miss.Christine') {
+        name = 'Miss Christine'
       }
       seenNames.add(name);
 

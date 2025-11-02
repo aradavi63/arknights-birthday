@@ -2098,5 +2098,35 @@
     "name": "Windscoot",
     "dob": "11-05",
     "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_445_wscoot.png"
+  },
+  {
+    "id": "char_4193_lemuen",
+    "name": "Lemuen",
+    "dob": "05-21",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4193_lemuen.png"
+  },
+  {
+    "id": "char_4194_rmixer",
+    "name": "Sankta Miksaparato",
+    "dob": "12-26",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4194_rmixer.png"
+  },
+  {
+    "id": "char_4188_confes",
+    "name": "CONFESS-47",
+    "dob": "12-24",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4188_confes.png"
+  },
+  {
+    "id": "char_4187_graceb",
+    "name": "Gracebearer",
+    "dob": "02-18",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4187_graceb.png"
+  },
+  {
+    "id": "char_4198_christ",
+    "name": "Miss Christine",
+    "dob": "wn",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4198_christ.png"
   }
 ]
