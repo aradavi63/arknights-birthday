@@ -147,9 +147,10 @@ async function fetchOperatorJson(): Promise<OperatorData[]> {
       if (name === 'Lava the Purgatory' && seenNames.has('Lava')) {
         continue; // Only alter listed with full title
       }
+      /* I initially changed it to the spaced version to make it easier to search, but I decided I wanted it back to the version Arknights officially typesets it
       if (name === 'Miss.Christine') {
         name = 'Miss Christine'
-      }
+      }*/
       seenNames.add(name);
 
       const image = getOperatorImageUrl(operatorInfo.charID);
