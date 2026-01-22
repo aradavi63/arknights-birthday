@@ -107,7 +107,7 @@ function getOperatorImageUrl(operatorId: string): string {
 
 async function fetchOperatorJson(): Promise<OperatorData[]> {
   try {
-    const response = await fetch('https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData_YoStar/main/en_US/gamedata/excel/handbook_info_table.json');
+    const response = await fetch('https://raw.githubusercontent.com/ArknightsAssets/ArknightsGamedata/refs/heads/master/en/gamedata/excel/handbook_info_table.json');
     
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);

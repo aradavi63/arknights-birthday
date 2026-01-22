@@ -2131,8 +2131,38 @@
   },
   {
     "id": "char_4198_christ",
-    "name": "Miss Christine",
+    "name": "Miss.Christine",
     "dob": "wn",
     "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4198_christ.png"
+  },
+  {
+    "id": "char_4195_radian",
+    "name": "Raidian",
+    "dob": "02-21",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4195_radian.png"
+  },
+  {
+    "id": "char_4196_reckpr",
+    "name": "Record Keeper",
+    "dob": "03-23",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4196_reckpr.png"
+  },
+  {
+    "id": "char_4202_haruka",
+    "name": "Haruka",
+    "dob": "10-10",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4202_haruka.png"
+  },
+  {
+    "id": "char_4203_kichi",
+    "name": "Kichisei",
+    "dob": "03-10",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4203_kichi.png"
+  },
+  {
+    "id": "char_4199_makiri",
+    "name": "Matsukiri",
+    "dob": "06-16",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4199_makiri.png"
   }
 ]
