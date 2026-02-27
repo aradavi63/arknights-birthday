@@ -82,6 +82,9 @@ function extractInfoFromStoryText(storyText: string): { name?: string; dob?: str
     else if (line.startsWith('[Serial Number]')) {
       name = line.replace('[Serial Number]', '').trim();
     }
+    else if (line.startsWith('[Name]')) {
+      name = line.replace('[Name]', '').trim();
+    }
     if (line.startsWith('[Date of Birth]')) {
       dob = line.replace('[Date of Birth]', '').trim();
     }

@@ -2164,5 +2164,35 @@
     "name": "Matsukiri",
     "dob": "06-16",
     "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4199_makiri.png"
+  },
+  {
+    "id": "char_4182_oblvns",
+    "name": "Sakiko Togawa",
+    "dob": "02-14",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4182_oblvns.png"
+  },
+  {
+    "id": "char_4186_tmoris",
+    "name": "Umiri Yahata",
+    "dob": "04-07",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4186_tmoris.png"
+  },
+  {
+    "id": "char_4184_dolris",
+    "name": "Uika Misumi",
+    "dob": "06-26",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4184_dolris.png"
+  },
+  {
+    "id": "char_4185_amoris",
+    "name": "Nyamu Yūtenji",
+    "dob": "06-01",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4185_amoris.png"
+  },
+  {
+    "id": "char_4183_mortis",
+    "name": "Mutsumi Wakaba",
+    "dob": "01-14",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4183_mortis.png"
   }
 ]
