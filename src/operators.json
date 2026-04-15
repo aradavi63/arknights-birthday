@@ -2212,5 +2212,23 @@
     "name": "Snegurochka",
     "dob": "12-01",
     "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4208_wintim.png"
+  },
+  {
+    "id": "char_4211_snhunt",
+    "name": "Snow Hunter",
+    "dob": "09-12",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4211_snhunt.png"
+  },
+  {
+    "id": "char_394_hadiya",
+    "name": "Hadiya",
+    "dob": "07-22",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_394_hadiya.png"
+  },
+  {
+    "id": "char_4051_akkord",
+    "name": "Akkord",
+    "dob": "08-11",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4051_akkord.png"
   }
 ]
