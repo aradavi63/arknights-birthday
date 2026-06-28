@@ -2230,5 +2230,35 @@
     "name": "Akkord",
     "dob": "08-11",
     "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4051_akkord.png"
+  },
+  {
+    "id": "char_4212_nasti",
+    "name": "Nasti",
+    "dob": "04-09",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4212_nasti.png"
+  },
+  {
+    "id": "char_4213_skybx",
+    "name": "Skybox",
+    "dob": "07-04",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4213_skybx.png"
+  },
+  {
+    "id": "char_4214_cairn",
+    "name": "Cairn",
+    "dob": "07-24",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4214_cairn.png"
+  },
+  {
+    "id": "char_4056_titi",
+    "name": "Titi",
+    "dob": "06-19",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4056_titi.png"
+  },
+  {
+    "id": "char_4166_varkis",
+    "name": "Varkáris",
+    "dob": "11-17",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4166_varkis.png"
   }
 ]
