@@ -2260,5 +2260,23 @@
     "name": "Varkáris",
     "dob": "11-17",
     "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4166_varkis.png"
+  },
+  {
+    "id": "char_4221_ju",
+    "name": "Ju",
+    "dob": "wn",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4221_ju.png"
+  },
+  {
+    "id": "char_2027_wang",
+    "name": "Wang",
+    "dob": "02-02",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_2027_wang.png"
+  },
+  {
+    "id": "char_4222_taraxa",
+    "name": "Taraxacum",
+    "dob": "08-07",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4222_taraxa.png"
   }
 ]
