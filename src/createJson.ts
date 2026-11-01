@@ -91,6 +91,10 @@ function extractInfoFromStoryText(storyText: string): { name?: string; dob?: str
     else if (line.startsWith('[Date of Release]')) {
       dob = line.replace('[Date of Release]', '').trim();
     }
+    else if (name == "Self-identified Chicken") { // GALLUS literally breaks name and DOB because of different conventions
+      name = "GALLUS²";
+      dob = "May 04";
+    }
     if (name != undefined && dob != undefined) { // Break because Ifrit's file is read twice
       break
     }

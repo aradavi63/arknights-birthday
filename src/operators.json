@@ -541,7 +541,7 @@
   },
   {
     "id": "char_281_popka",
-    "name": "Popukar",
+    "name": "Unknown",
     "dob": "07-02",
     "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_281_popka.png"
   },
@@ -2278,5 +2278,53 @@
     "name": "Taraxacum",
     "dob": "08-07",
     "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4222_taraxa.png"
+  },
+  {
+    "id": "char_4037_demetr",
+    "name": "Bellone",
+    "dob": "08-06",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4037_demetr.png"
+  },
+  {
+    "id": "char_4031_liesel",
+    "name": "Ripresa",
+    "dob": "04-07",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4031_liesel.png"
+  },
+  {
+    "id": "char_4224_turdus",
+    "name": "Ukusik",
+    "dob": "06-01",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4224_turdus.png"
+  },
+  {
+    "id": "char_4223_botany",
+    "name": "Botani",
+    "dob": "02-13",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4223_botany.png"
+  },
+  {
+    "id": "char_4228_closur",
+    "name": "Closure",
+    "dob": "12-10",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4228_closur.png"
+  },
+  {
+    "id": "char_4225_tanya",
+    "name": "Crackborne",
+    "dob": "04-18",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4225_tanya.png"
+  },
+  {
+    "id": "char_4226_veen",
+    "name": "Viy",
+    "dob": "06-21",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4226_veen.png"
+  },
+  {
+    "id": "char_4227_gallus",
+    "name": "GALLUS²",
+    "dob": "05-04",
+    "image": "https://raw.githubusercontent.com/PuppiizSunniiz/Arknight-Images/refs/heads/main/avatars/char_4227_gallus.png"
   }
 ]
